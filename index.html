@@ -368,6 +368,7 @@ function anSelectChanged() {
 function onloadCallback() {
     loadSettings();
     populateVoiceList();
+    generateNewCode();
 }
 </script>
 <style>
@@ -419,7 +420,7 @@ Press enter for "Next"<br />
 <button onclick="generateNewCode()">Next</button>
 </div>
 <div id="content">
-<div id="an_code">ABCDEF</div>
+<div id="an_code"></div>
 <div id="an_answer"></div>
 
 <div class="controls">
