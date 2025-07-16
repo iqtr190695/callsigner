@@ -251,7 +251,7 @@ function generateNewCode() {
 
     var acft_type = randomElementOf(ACFT_TYPES);
     var type = typeFromACFTType(acft_type);
-    codeDiv.innerHTML = newValue + " <a onclick=\"showTypeInfo('" + type + "')\">" + type + "</a><br />" + codeDiv.innerHTML;
+    codeDiv.innerHTML = newValue + " <a onclick=\"showTypeInfo('" + type + "')\">" + type + "</a><hr />" + codeDiv.innerHTML;
 }
 
 function typeFromACFTType(pack) {
@@ -448,7 +448,7 @@ button {
 </style>
 </head>
 
-<body onkeyup="handleKeyUp(event)" onload="onloadCallback()">
+<body onclick="generateNewCode()" onkeyup="handleKeyUp(event)" onload="onloadCallback()">
 Press enter for "Next"<br />
 <div class="controls">
 <button onclick="generateNewCode()">Next</button>
