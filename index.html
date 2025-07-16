@@ -193,9 +193,6 @@ function loadSettings() {
     codeDiv = document.getElementById("an_code");
     codeAns = document.getElementById("an_answer");
     modeSelect = document.getElementById("an_select");
-    if (localStorage['mode']) {
-        modeSelect.value = localStorage['mode'];
-    }
     ACFT_TYPES.forEach(element => {
         let parts = element.split("/");
         let info = {"wake": parts[3], "name": parts[4]};
