@@ -305,19 +305,10 @@ function speakableAnswer(code, lookupType) {
     }
     return answer;
 }
-function showAnswer() {
-    var value = modeSelect.value;
-    var isCallsignPracticeMode = value == "np";
-    if (codeAns.innerHTML.length == 0) {
-        codeAns.innerHTML = speakableAnswer(codeDiv.innerHTML);
-    }
-    codeDiv.hidden = false;
-}
+
 function handleKeyUp(e) {
     if (e != null && e.keyCode == 13) {
         generateNewCode();
-    } else {
-        showAnswer();
     }
 }
 
