@@ -10,7 +10,7 @@ const PermittedCallsignLetters = "ABCDEFGHJKLMNPQRSTUVWXYZ";
 const PermittedLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const PermittedNumbers = "1234567890";
 const CallsignFormats = ["#####", "####A", "###AA"];
-var Callsigns = {
+const Callsigns = {
 "AAL":"AMERICAN",
 "AAY":"ALLEGIANT",
 "ASQ":"ACEY",
@@ -38,7 +38,7 @@ var Callsigns = {
 "PDT":"PIEDMONT",
 "EJA":"EXECJET"
 };
-var MilCallsigns = [
+const MilCallsigns = [
 "AGONY",
 "BALL",
 "CANON",
@@ -68,105 +68,105 @@ var MilCallsigns = [
 "WATCH"
 ]
 
-ACFT_TYPES = [
-"AEST",
-"A319",
-"A320",
-"A332",
-"A388",
-"B190",
-"B350",
-"BE35",
-"B350",
-"BE36",
-"BE20",
-"BE30",
-"BE40",
-"BE55",
-"BE58",
-"BE60",
-"BE76",
-"B06",
-"UH1",
-"B52",
-"B737",
-"B738",
-"B38M",
-"B744",
-"B752",
-"B772",
-"B762",
-"C17",
-"CH47",
-"K35A",
-"K35E",
-"MD11",
-"B763",
-"B788",
-"MD80",
-"MD90",
-"CL60",
-"CRJ7",
-"CRJ9",
-"C152",
-"C172",
-"C177",
-"C182",
-"C206",
-"C208",
-"C210",
-"C310",
-"C337",
-"C402",
-"C414",
-"C421",
-"C441",
-"C650",
-"C750",
-"F900",
-"FA20",
-"DH8D",
-"DH8C",
-"E145",
-"E170",
-"E175",
-"E75S",
-"E190",
-"A10",
-"LJ25",
-"LJ31",
-"LJ35",
-"LJ55",
-"LJ60",
-"AA5",
-"C2",
-"GLF4",
-"GLF5",
-"C130",
-"C5",
-"C5A",
-"F16",
-"F15",
-"F18",
-"MU2",
-"M20T",
-"PC12",
-"PA27",
-"PAY1",
-"PAY2",
-"PAY3",
-"PAY4",
-"PA46",
-"PA31",
-"PA32",
-"PA44",
-"PA34",
-"P28A",
-"R22",
-"AC50",
-"B1",
-"H60"
-]
+const ACFT_TYPES = [
+"AEST/2P/S/H/Aerostar",
+"A319/2J/L/F/A-319",
+"A320/2J/L/F/A-320",
+"A332/2J/H/B/A-330",
+"A388/4J/J/A/A380",
+"B190/2T/S+/H/Beech 1900",
+"B350/2T/S+/H/King Air",
+"BE35/1P/S/I/Bonanza",
+"B350/2T/S+/H/King Air",
+"BE36/1P/S/I/Bonanza",
+"BE20/2T/S+/I/King Air",
+"BE30/2T/S+/I/Super King Air",
+"BE40/2J/S+/H/Beechjet",
+"BE55/2P/S/I/Baron",
+"BE58/2P/S/I/Baron",
+"BE60/2P/S/I/Duke",
+"BE76/2P/S/I/Duchess",
+"B06/1T/S/I/JetRanger",
+"UH1/1T/2/I/Huey",
+"B52/8J/H/D/B-52",
+"B737/2J/L/F/B-737",
+"B738/2J/L/F/Boeing 737",
+"B38M/2J/L/F/Boeing 737",
+"B744/4J/H/B/Boeing 747",
+"B752/2J/L/D/Boeing 757",
+"B772/2J/H/B/Boeing 777",
+"B762/2J/H/C/Boeing 767",
+"C17/4J/H/C/Heavy C-17",
+"CH47/2T/L/G/CH-47",
+"K35A/4J/H/D/KC-135",
+"K35E/4J/H/C/KC-135",
+"MD11/3J/H/C/MD-11",
+"B763/2J/H/C/Boeing 767",
+"B788/2J/H/B/Boeing 787",
+"MD80/2J/L/F/MD-80",
+"MD90/2J/L/F/MD-90",
+"CL60/2J/L/G/Challenger",
+"CRJ7/2J/L/G/Regional Jet",
+"CRJ9/2J/L/G/Regional Jet",
+"C152/1P/S/I/Cessna",
+"C172/1P/S/I/Cessna/Skyhawk",
+"C177/1P/S/I/Cessna/Cardinal",
+"C182/1P/S/I/Cessna 182",
+"C206/1P/S/I/Stationair",
+"C208/1T/S/I/Caravan",
+"C210/1P/S/I/Centurion",
+"C310/2P/S/I/Twin Cessna",
+"C337/2P/S/I/Skymaster",
+"C402/2P/S/I/Twin Cessna",
+"C414/2P/S/I/Chancellor",
+"C421/2P/S/I/Golden Eagle",
+"C441/2T/S/I/Conquest",
+"C650/2J/S+/H/Citation",
+"C750/2J/S+/H/Citation",
+"F900/3J/L/G/Falcon",
+"FA20/2J/S+/H/Falcon",
+"DH8D/2T/L/F/Dash 8",
+"DH8C/2T/L/F/Dash 8",
+"E145/2J/L/G/Regional Jet",
+"E170/2J/L/G/Regional Jet",
+"E175 (E75S)/2J/L/G/Regional Jet",
+"E190/2J/L/F/Regional Jet",
+"A10/2J/L/G/A-10",
+"LJ25/2J/S+/H/Learjet",
+"LJ31/2J/S+/H/Learjet",
+"LJ35/2J/S+/H/Learjet",
+"LJ55/2J/S+/H/Learjet",
+"LJ60/2J/S+/H/Learjet",
+"AA5/1P/S//Grumman",
+"C2/2T/L/H/Grumman Greyhound",
+"GLF4/2J/L/G/Gulfstream",
+"GLF5/2J/L/F/Gulfstream",
+"C130/4T/L/F/C-130",
+"C5/4J/H/B/C-5",
+"C5A/4J/H/B/C-5",
+"F16/1J/L/G/F-16",
+"F15/2J/L/G/F-15",
+"F18/2J/L/G/F-18",
+"MU2/2T/S/I/Mitsubishi",
+"M2OT/1P/S/I/Mooney",
+"PC12/1T/S/I/Pilatus",
+"PA27/2P/S/I/Aztec",
+"PAY1/2T/S/I/Cheyenne",
+"PAY2/2T/S/I/Cheyenne",
+"PAY3/2T/S/I/Cheyenne",
+"PAY4/2T/S/I/Cheyenne",
+"PA46/1P/S/I/Malibu",
+"PA31/2P/S/I/Navajo",
+"PA32/1P/S/I/Saratoga",
+"PA44/2P/S/I/Seminole",
+"PA34/2P/S/I/Seneca",
+"P28A/1P/S/I/Cherokee",
+"R22/1P/S/I/Helicopter",
+"AC50/2P/S/I/Commander",
+"B1/4J/H/D/B-1",
+"H60/2T/S+/I/Blackhawk"
+];
+var ACFT_TYPES_NAME_MAP = {};
 
 function randomElementOf(a) {
     let randomIndex = Math.floor(Math.random() * a.length);
@@ -196,6 +196,12 @@ function loadSettings() {
     if (localStorage['mode']) {
         modeSelect.value = localStorage['mode'];
     }
+    ACFT_TYPES.forEach(element => {
+        let parts = element.split("/");
+        let info = {"wake": parts[3], "name": parts[4]};
+        ACFT_TYPES_NAME_MAP[parts[0]] = info;
+    });
+    console.log(ACFT_TYPES_NAME_MAP);
 }
 
 function saveSettings() {
@@ -244,8 +250,35 @@ function generateNewCode() {
     }
 
     var acft_type = randomElementOf(ACFT_TYPES);
+    var type = typeFromACFTType(acft_type);
+    codeDiv.innerHTML = newValue + " <a onclick=\"showTypeInfo('" + type + "')\">" + type + "</a><br />" + codeDiv.innerHTML;
+}
 
-    codeDiv.innerHTML = newValue + " " + acft_type + "<br />" + codeDiv.innerHTML;
+function typeFromACFTType(pack) {
+    let parts = pack.split("/");
+    return parts[0];
+}
+
+function nameFromACFTType(pack) {
+    let parts = pack.split("/");
+    return parts[4];
+}
+
+function showTypeInfo(link) {
+    let info = ACFT_TYPES_NAME_MAP[link];
+    var cwt = "Unknown";
+    var name = "Unknown";
+    if (info != null) {
+        cwt = info["wake"];
+        name = info["name"];
+    }
+    var prefix = "";
+    if (cwt == "A") {
+        prefix = "Super ";
+    } else if (cwt == "B" || cwt == "C" || cwt == "D") {
+        prefix = "Heavy ";
+    }
+    alert(link + " = " + prefix + name);
 }
 
 function speakableAnswer(code, lookupType) {
@@ -314,6 +347,7 @@ function speakCallsign(text) {
 }
 
 function populateVoiceList() {
+    return;
   voices = synth.getVoices().sort(function (a, b) {
     const aname = a.name.toUpperCase();
     const bname = b.name.toUpperCase();
